@@ -1,0 +1,686 @@
+#navmain {
+  background-color: rgb(74, 121, 122);
+  position: fixed;
+  min-width: 100vw;
+  min-height: 3rem;
+  left: 0;
+  display: flex;
+  top: 0;
+  z-index: 15;
+  align-items: center;
+}
+.cart .count{
+  position:absolute;
+  right:0.5rem;
+  top: 0.16rem;
+  font-size:15px;
+  color:cadetblue
+}
+section{
+  display: flex;
+  justify-content: center;
+  background-color: ivory;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+.cartmain{
+  display: flex;
+  position: relative;
+  margin-top: 3rem;
+  margin-bottom: 7rem;
+  flex-direction: column;
+  align-items: center;
+}
+.cartmain2 table{
+  min-width: 80vw;
+}
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25%, 75% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.signupAl{
+  animation: shake 0.5s ease-in-out forwards;
+}
+.addBatch{
+  border-radius:10px;
+  position:absolute;
+  z-index: 100;
+  padding:5px;
+  background:  #d4edda;
+  display: flex;
+  font-family: math;
+  font-weight: bold;
+  justify-content: center;
+  min-width: 20vw;
+  animation: fadeIn 0.5s ease-in-out;
+  color: #155724;
+}
+.alrdyBatch{
+  border-radius:10px;
+  position:absolute;
+  z-index: 100;
+  padding:5px;
+  background: #f8d7da;
+  display: flex;
+  font-family: math;
+  font-weight: bold;
+  justify-content: center;
+  min-width: 20vw;
+  animation: shake 0.5s ease-in-out forwards;
+  color: #721c24;
+}
+
+.cartmain2 table tr{
+  padding: 5px;
+  box-shadow: 0 6px 9px -5px black;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.cartmain2 table tr td{
+  text-align: center;
+}
+td:first-child{
+  min-width: 4rem;
+}
+td:nth-child(2){
+  max-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+th:first-child{
+  text-align: center;
+  min-width: 4rem;
+}
+td button{
+  border: none;
+  margin-left: 0.1rem;
+
+}
+#navmain h4{
+  margin: 0;
+  margin-left: 2rem;
+  font-family: math;
+  color:rgb(255, 255, 255);
+  text-shadow: 0 1px 10px rgb(30, 29, 29);
+}
+#navmain ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  margin-left: 11rem;
+  align-items: center;
+}
+.nav2 {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-left: 1rem;
+}
+.dropdown-content{
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: rgb(154, 172, 172);
+  border-radius: 10px;
+  margin-left: 7.7rem;
+  margin-top: 10.8rem;
+}
+.grpInp{
+  position:absolute;
+  right:4rem;
+}
+.grpInp input{
+  color:azure;
+  outline: none;
+  background-color: transparent;
+  border-radius: 3px;
+  border:1px solid azure;
+}
+.grpInp input::placeholder{
+  text-align: center;
+  color: azure;
+}
+.grpInp button{
+  font-family: math;
+  background-color:lightyellow;
+  border: 1px solid azure;
+  color:rgb(12, 101, 101);
+  margin-left: 0.5rem;
+  border-radius: 3px;
+}
+.link2{
+  font-weight: bold;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 5px;
+  margin-left: 2rem;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+.link2:hover{
+  border-radius: 10px;
+  background-color: rgb(55, 97, 121);
+  color: rgb(255, 255, 255);
+}
+.link{
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  padding: 8px;
+  text-decoration: none;
+}
+.link:hover{
+  border-radius: 10px;
+  background-color: rgb(55, 97, 121);
+  color:rgb(255, 255, 255)
+}
+a{
+  float: left;
+}
+ul li{
+  list-style: none;
+  padding: 5px;
+}
+.nav3{
+  display: none;
+}
+.grpInp2{
+  display: none;
+}
+.cart{
+  color:lightyellow;
+  font-size:25px;
+  position:absolute;
+  right:1.5rem;
+}
+.bars{
+  display: none;
+}
+.form{
+  margin-top: 0rem;
+  display: flex;
+  min-width: 60vw;
+  min-height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.form h1{
+  font-family: serif;
+  color: cadetblue;
+  padding-bottom: 1rem;
+}
+.form form{
+  padding: 25px;
+  border-radius: 10px;
+  z-index: 9;
+  background: linear-gradient(30deg, lightyellow 0%, azure 70%);
+  box-shadow: 0 0 10px cadetblue;
+  max-height: 55vw;
+}
+.loginform{
+  display: flex;
+  min-width: 28rem;
+  min-height: 48vh;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.loginform h1{
+  font-family: serif;
+  font-size: 40px;
+  color: cadetblue;
+  padding-bottom: 1rem;
+}
+.loginform form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9;
+  padding: 25px;
+  border-radius: 10px;
+  background: linear-gradient(30deg, lightyellow 0%, azure 70%);
+  box-shadow: 0 0 10px cadetblue;
+  width: 100%;
+  min-height: 18vh;
+}
+.formdata{
+  display:flex;
+  font-family: math;
+  color: cadetblue;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+}
+.formdata input{
+  margin-left: 2rem;
+  border-radius: 5px;
+  border:none ;
+  background-color: transparent;
+  border-bottom: 1px solid cadetblue;
+  outline: none;
+}
+.formdata input::placeholder{
+  color: rgba(95, 158, 160, 0.537);
+}
+.formbutn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.formbutn button{
+  /* position: absolute; */
+  border: 1px solid cadetblue;
+  background-color: transparent;
+  border-radius: 5px;
+  color: cadetblue;
+  font-family: math;
+}
+.formbutn button:hover{
+  background-color: cadetblue;
+  border: none;
+  box-shadow: 0 0 10px cadetblue;
+  color:lightyellow;
+}
+.formbutn2{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+}
+.formbutn2 button{
+  /* position: absolute; */
+  border: 1px solid lightyellow;
+  background-color: transparent;
+  border-radius: 5px;
+  color: lightyellow;
+  font-family: math;
+}
+.formbutn2 button:hover{
+  background-color: lightyellow;
+  border: none;
+  box-shadow: 0 0 10px lightyellow;
+  color:cadetblue;
+}
+.submit{
+  display: flex;
+  position: absolute;
+  min-width: 100vw;
+  justify-content: center;
+}
+.submit span p{
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(45, 168, 38);
+  font-family: monospace;
+  margin-top: 5rem;
+}
+.auth{
+  position: absolute;
+  right: 5rem;
+}
+.imgback{
+  width: 100%;
+}
+.imgback2{
+  display: none;
+}
+.signmain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+.alrdy {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  max-height: 30vh;
+  min-width: 40vw;
+  padding-top: 5rem;
+}
+.alrdy h2{
+  color: blanchedalmond;
+  font-weight: bold;
+  font-size: 40px;
+  font-family: math;
+}
+.alrdy p{
+  font-size: 20px;
+  color: ghostwhite;
+  font-family: auto;
+}
+@media screen and (max-width:280px){
+ .alrdy{
+  display: none;
+ }
+ .nav2{
+  display: none;
+}
+.grpInp{
+  display: none;
+}
+.cart{
+  font-size: 15px;
+  right:1rem;
+}
+.formdata{
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.nav3 {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 3rem;
+  right: 0;
+  background-color: #3c4949f5;
+  min-width: 50vw;
+  align-items: center;
+  min-height: 35vh;
+}
+.bars{
+  color: lightyellow;
+  font-size: 15px;
+  display: block;
+  position: absolute;
+  right: 3.5rem;
+}
+.form form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px cadetblue;
+  min-height: 52vh;
+  align-items: center;
+}
+.loginform form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px cadetblue;
+  min-height: 35vh;
+}
+.formbutn{
+margin-top: 1rem;
+}
+.grpInp2 {
+  display: flex;
+  padding: 1rem;
+}
+.grpInp2 input{
+color:azure;
+outline: none;
+background-color: transparent;
+border-radius: 3px;
+border:1px solid azure;
+}
+.grpInp2 input::placeholder{
+text-align: center;
+color: azure;
+}
+.grpInp2 button{
+font-family: math;
+background-color:lightyellow;
+border: 1px solid azure;
+color:rgb(12, 101, 101);
+margin-left: 0.5rem;
+border-radius: 3px;
+}
+.link{
+padding: 1rem;
+}
+.link:hover{
+border-radius: 10px;
+background-color: rgb(55, 97, 121);
+color:rgb(255, 255, 255)
+}
+.auth{
+display: none;
+}
+.formdata input{
+margin-left: 0;
+}
+.alrdy{
+display: none;
+}
+.signmain{
+justify-content: center;
+}
+.imgback{
+  display: none;
+}
+.imgback2{
+  display: block;
+}
+}
+@media screen and (min-width:280px) and (max-width:600px) {
+  .nav2{
+    display: none;
+  }
+  .grpInp{
+    display: none;
+  }
+  .cart{
+    font-size: 22px;
+    right:1rem;
+  }
+  .cart .count{
+    top:0.03rem;
+    right: 0.4rem;
+  }
+  .link2{
+    margin-left: 1rem;
+  }
+  .formdata{
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  .imgback{
+    display: none;
+  }
+  .imgback2{
+    display: block;
+  }
+  .nav3 {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 3rem;
+    right: 0;
+    background-color: #3c4949f5;
+    align-items: center;
+    min-height: 35vh;
+    min-width: 100vw;
+}
+#navmain h4{
+  margin-left: 2rem;
+}
+  .bars{
+    color: lightyellow;
+    font-size: 20px;
+    display: block;
+    position: absolute;
+    right: 3.5rem;
+  }
+  .form form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 7px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px cadetblue;
+    min-height: 42vh;
+    max-height: 100vh;
+    align-items: center;
+  }
+  .loginform{
+    min-width: 55vw;
+  }
+  .loginform form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px cadetblue;
+    min-height: 25vh;
+    max-height: 100vh;
+  }
+.formbutn{
+  margin-top: 1rem;
+}
+  .grpInp2 {
+    display: flex;
+    padding: 1rem;
+}
+.grpInp2 input{
+  color:azure;
+  outline: none;
+  background-color: transparent;
+  border-radius: 3px;
+  border:1px solid azure;
+}
+.grpInp2 input::placeholder{
+  text-align: center;
+  color: azure;
+}
+.grpInp2 button{
+  font-family: math;
+  background-color:lightyellow;
+  border: 1px solid azure;
+  color:rgb(12, 101, 101);
+  margin-left: 0.5rem;
+  border-radius: 3px;
+}
+.link{
+  padding: 1rem;
+}
+.link:hover{
+  border-radius: 10px;
+  background-color: rgb(55, 97, 121);
+  color:rgb(255, 255, 255)
+}
+.auth{
+  display: none;
+}
+.formdata input{
+  margin-left: 0;
+}
+.alrdy{
+  display: none;
+}
+.signmain{
+  justify-content: center;
+}
+}
+@media screen and (min-width:600px) and (max-width:780px) {
+  .nav2{
+    display: none;
+  }
+  .grpInp{
+    display: none;
+  }
+  .grpInp2 input{
+    color:azure;
+    outline: none;
+    background-color: transparent;
+    border-radius: 3px;
+    border:1px solid azure;
+  }
+  .grpInp2 input::placeholder{
+    text-align: center;
+    color: azure;
+  }
+  .grpInp2 button{
+    font-family: math;
+    background-color:lightyellow;
+    border: 1px solid azure;
+    color:rgb(12, 101, 101);
+    margin-left: 0.5rem;
+    border-radius: 3px;
+  }
+  .cart{
+    right: 1.5rem;
+  }
+  #navmain h4{
+    margin-left: 2.5rem;
+  }
+  .bars{
+    color: lightyellow;
+    font-size: 25px;
+    display: block;
+    position: absolute;
+    right: 4rem;
+  }
+  .nav3 {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 3rem;
+    right: 0;
+    background-color: #3c4949f5;
+    align-items: center;
+    max-height: 64vh;
+    padding-bottom: 12px;
+}
+.grpInp2 {
+  display: flex;
+  padding: 1rem;
+}
+.formdata input{
+  max-width: 19vw;
+}
+.link{
+  padding: 1rem;
+}
+.link:hover{
+  border-radius: 10px;
+  background-color:rgb(255, 255, 255);
+  color:rgb(55, 97, 121);
+}
+.auth{
+  display: none;
+}
+.alrdy h2{
+  font-size: 30px;
+}
+.alrdy p{
+  font-size: 16px;
+}
+.formbutn2 button{
+  font-size: 15px;
+}
+.alrdy{
+  display: none;
+}
+.signmain{
+  justify-content: center;
+}
+}
