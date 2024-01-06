@@ -5,9 +5,10 @@ import { useSelector,useDispatch } from 'react-redux';
 import Fetch, { cartUpdated } from '../Redux/Action';
 import axios from 'axios';
 import { BASE_URL } from '../uri';
+import socket from '../socket';
 
 
-const Main = ({setlogin,setAdded,setAlready,socket}) => {
+const Main = ({setlogin,setAdded,setAlready,check}) => {
   const{products}=useSelector(state=>state.items)
   const [isHovered, setIsHovered] = useState(Array(products?.length).fill(false));
   const{messages2}=useSelector(state=>state.items4)
@@ -15,7 +16,6 @@ const Main = ({setlogin,setAdded,setAlready,socket}) => {
 
   const{userID}=useSelector(state=>state.items8)
 
- 
 
   const dispatch= useDispatch()
  
@@ -62,11 +62,7 @@ const Main = ({setlogin,setAdded,setAlready,socket}) => {
   try { 
     const response = await axios.post(`${BASE_URL}/add`,item,{withCredentials:true,credentials:"include"})
     if(response.data.success){
-        socket.emit('updateCart',userID)
-
-        socket.on("cartUpdated",(data)=>{
-          dispatch(cartUpdated(data))
-        })
+      socket.emit('updateCart', userID);
       setAdded(response.data.success)
       setTimeout(()=>{
         setAdded(false)
@@ -83,11 +79,9 @@ const Main = ({setlogin,setAdded,setAlready,socket}) => {
     console.log(error)
   }
   }
-
-
   useEffect(()=>{
     dispatch(Fetch("All"))
-  },[])
+  },[dispatch])
 
   return (
     <section>

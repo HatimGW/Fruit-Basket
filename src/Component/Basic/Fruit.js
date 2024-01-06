@@ -12,7 +12,7 @@ import axios from 'axios';
 import {users,message2, loginSuccess, cartUpdated } from '../Redux/Action';
 import PaymentSuccessPage from './payemntSuccess';
 import { BASE_URL } from '../uri';
-import io from "socket.io-client"
+import socket from '../socket';
 
 const Fruit = () => {
 
@@ -23,11 +23,9 @@ const Fruit = () => {
   const[Already,setAlready]=useState(false)
   const[Added,setAdded]=useState(false)
   const[login,setlogin]=useState(false)
-  const{userID}=useSelector(state=>state.items8)
+
 
   const dispatch = useDispatch()
-
-  const socket = io('https://fruit-basket.onrender.com');
 
 
   const check = async() =>{
@@ -39,6 +37,7 @@ const Fruit = () => {
         dispatch(users(response.data.username))
         dispatch(loginSuccess(response.data.userID))
         dispatch(message2(response.data.success))
+        socket.emit('updateCart', response.data.userID);
 
         }
         else{
@@ -49,20 +48,8 @@ const Fruit = () => {
     } catch (error) {
         console.log(error)
     }
-   
- 
 }
-console.log(userID)
-  useEffect(() => {
-    // socket.emit('login', userID);
-    socket.emit("updateCart",userID)
-    socket.on('cartUpdated', (data) => {
-      dispatch(cartUpdated(data));
-    });
-  return () => {
-    socket.disconnect();
-  };
-  },[userID,dispatch]);
+
   
 useEffect(()=>{
     check()
@@ -81,11 +68,11 @@ useEffect(()=>{
     </div>
      <Routes>
   
-     <Route path="/" element={<Main socket={socket} setlogin={setlogin} setAdded={setAdded} setAlready={setAlready}/>}></Route>
-     <Route path="/success" element={<PaymentSuccessPage socket={socket}/>}></Route>
-     <Route path="/login" element={<Login socket={socket}/>}></Route>
+     <Route path="/" element={<Main check={check} setlogin={setlogin} setAdded={setAdded} setAlready={setAlready}/>}></Route>
+     <Route path="/success" element={<PaymentSuccessPage/>}></Route>
+     <Route path="/login" element={<Login check={check}/>}></Route>
      {messages2 ? (
-     <Route path="/cart" element={<Cart socket={socket}/>}></Route>
+     <Route path="/cart" element={<Cart check={check}/>}></Route>
      ):(
      <Route  path="/cart" element={<Cart2/>}></Route>
      )}

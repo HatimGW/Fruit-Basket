@@ -10,11 +10,17 @@
   align-items: center;
 }
 .cart .count{
-  position:absolute;
-  right:0.5rem;
-  top: 0.16rem;
-  font-size:15px;
-  color:cadetblue
+  font-size: 5px;
+  top: 0px;
+  top: -4px;
+  color: cadetblue;
+  position: absolute;
+}
+.cartpng{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 section{
   display: flex;

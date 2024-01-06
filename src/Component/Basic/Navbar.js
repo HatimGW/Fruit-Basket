@@ -19,8 +19,6 @@ const Navb=({Added,Already,login})=> {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-
-
 const handleDropdownToggle = () => {
   setIsDropdownOpen(!isDropdownOpen);
 };
@@ -96,7 +94,7 @@ return (
       )}
     </div>
 
-<Link style={{textDecoration:"none"}} className='cart' to="/cart" ><span className='count'>{messages2 ? cartData.length : null}</span><i class="fa-solid fa-cart-shopping"></i></Link>
+<Link style={{textDecoration:"none"}} className='cart' to="/cart" ><div className='cartpng'><span className='count'>{messages2 ? cartData?.length : null}</span><i class="fa-solid fa-cart-shopping"></i></div></Link>
 
 
 <i onClick={handleDropdownToggle} class="fa-solid fa-bars bars"></i>

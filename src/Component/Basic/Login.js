@@ -6,10 +6,11 @@ import { useDispatch, useSelector} from 'react-redux'
 import { cartUpdated, loginSuccess, message2, message3,users } from '../Redux/Action'
 import fruit from "./back.png"
 import { BASE_URL } from '../uri'
+import socket from '../socket'
 
 
 
-const Login = ({socket}) => {
+const Login = ({check}) => {
     const[logindata,setlogin]=useState({})
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -19,15 +20,12 @@ const Login = ({socket}) => {
         try {
             const response = await axios.post(`${BASE_URL}/login`,logindata,{withCredentials:true,credentials:"include"})
         if(response.data.success){
-
             dispatch(message2(response.data.success))
             dispatch(message3(response.data.success))
             dispatch(users(response.data.username))
             dispatch(loginSuccess(response.data.userID));
-            socket.emit('login',response.data.userID)
-              socket.on('cartUpdateds', (data) => {
-                      dispatch(cartUpdated(data));
-                    });
+            socket.emit('login', response.data.userID);
+            socket.emit('updateCart', response.data.userID);
             setTimeout(()=>{
               dispatch(message3(false))
             },3000)

@@ -4,16 +4,15 @@ import axios from 'axios'
 import Payment from './payment'
 import {useNavigate } from 'react-router-dom'
 import { BASE_URL } from '../uri'
-import { cartUpdated } from '../Redux/Action'
-import io from 'socket.io-client';
+import socket from '../socket'
 
-const Cart = ({socket}) => {
+
+
+const Cart = ({check}) => {
 
 const[prices,setPrice]=useState(null)
 const{userID}=useSelector(state=>state.items8)
 
-
-const dispatch = useDispatch()
 const navigate = useNavigate()
 
 const{cartData}=useSelector(state=>state.items7)
@@ -35,8 +34,7 @@ const amounts = async(item,amt)=>{
   const response = await axios.post(`${BASE_URL}/amount`,{...item, amount: Math.max(1,item.amount + amt)},{withCredentials:true,credentials:"include"})
  
   if(response.data.success){
-    socket.emit('updateCart',userID)
-  
+    socket.emit('updateCart',userID);
     price()
   }
   } catch (error) {
@@ -49,7 +47,7 @@ const del = async(id)=>{
 try {
   const response = await axios.get(`${BASE_URL}/del?id=${id}`,{withCredentials:true,credentials:"include"})
   if(response.data.success){
-    socket.emit('updateCart',userID)
+    socket.emit('updateCart', userID);
   }
  } catch (error) {
   console.log(error)
@@ -63,7 +61,7 @@ const handleToken = async(token) => {
   if(response){
      const del = await axios.get(`${BASE_URL}/alldel`,{withCredentials:true,credentials:'include'})
      if(del.data.success){
-      socket.emit('updateCart',userID)
+      socket.emit('updateCart',userID);
       navigate("/success",{state:{item:response.data.charge}})
      }
      else{
