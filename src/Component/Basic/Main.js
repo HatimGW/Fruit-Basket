@@ -64,6 +64,9 @@ const Main = ({setlogin,setAdded,setAlready,socket}) => {
     if(response.data.success){
         socket.emit('updateCart',userID)
 
+        socket.on("cartUpdated",(data)=>{
+          dispatch(cartUpdated(data))
+        })
       setAdded(response.data.success)
       setTimeout(()=>{
         setAdded(false)

@@ -24,7 +24,7 @@ const Navb=({Added,Already,login})=> {
 const handleDropdownToggle = () => {
   setIsDropdownOpen(!isDropdownOpen);
 };
-
+console.log(cartData)
 const logout = async()=>{
  try {
   const response = await axios.get(`${BASE_URL}/logout`,{withCredentials:true,credentials:"include"})
