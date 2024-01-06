@@ -84,7 +84,7 @@ const Main = ({setlogin,setAdded,setAlready,socket}) => {
 
   useEffect(()=>{
     dispatch(Fetch("All"))
-  },[dispatch])
+  },[])
 
   return (
     <section>
