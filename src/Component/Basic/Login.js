@@ -25,7 +25,7 @@ const Login = ({socket}) => {
             dispatch(users(response.data.username))
             dispatch(loginSuccess(response.data.userID));
             socket.emit('login',response.data.userID)
-              socket.on('cardUpdated', (data) => {
+              socket.on('cartUpdated', (data) => {
                       dispatch(cartUpdated(data));
                     });
             setTimeout(()=>{
