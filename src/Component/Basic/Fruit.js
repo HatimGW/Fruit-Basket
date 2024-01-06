@@ -52,7 +52,7 @@ const Fruit = () => {
    
  
 }
-
+console.log(userID)
   useEffect(() => {
     // socket.emit('login', userID);
     socket.emit("updateCart",userID)
