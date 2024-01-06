@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import Fruit from './Component/Basic/Fruit';
 import socket from './Component/socket';
-import { cartUpdated } from './Component/Redux/Action';
+import Fetch, { cartUpdated } from './Component/Redux/Action';
 import { useEffect } from 'react';
 
 function App() {
@@ -23,6 +23,10 @@ const{userID}=useSelector(state=>state.items8)
     };
   },[userID,dispatch]);
   
+  useEffect(()=>{
+    dispatch(Fetch("All"))
+  },[dispatch])
+
 
   return (
    <>

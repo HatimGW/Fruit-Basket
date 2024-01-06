@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import {Container,Card,Button,Row,Col} from 'react-bootstrap';
 import Badge from 'react-bootstrap/Badge'
 import { useSelector,useDispatch } from 'react-redux';
-import Fetch, { cartUpdated } from '../Redux/Action';
 import axios from 'axios';
 import { BASE_URL } from '../uri';
 import socket from '../socket';
@@ -79,9 +78,6 @@ const Main = ({setlogin,setAdded,setAlready,check}) => {
     console.log(error)
   }
   }
-  useEffect(()=>{
-    dispatch(Fetch("All"))
-  },[dispatch])
 
   return (
     <section>
