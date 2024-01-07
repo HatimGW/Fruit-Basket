@@ -7,12 +7,8 @@ import Cart2 from './cart2';
 import Signup from './Signup';
 import Login from './Login';
 import "./App.css"
-import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
-import {users,message2, loginSuccess, cartUpdated } from '../Redux/Action';
+import { useSelector } from 'react-redux';
 import PaymentSuccessPage from './payemntSuccess';
-import { BASE_URL } from '../uri';
-import socket from '../socket';
 
 const Fruit = () => {
 
