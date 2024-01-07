@@ -94,7 +94,12 @@ return (
       )}
     </div>
 
-<Link style={{textDecoration:"none"}} className='cart' to="/cart" ><div className='cartpng'><span className='count'>{messages2 ? cartData?.length : null}</span><i class="fa-solid fa-cart-shopping"></i></div></Link>
+<Link style={{textDecoration:"none"}} className='cart' to="/cart" >
+<div className='cartpng'>
+<span className='count'>1{messages2 ? cartData?.length : null}</span>
+<i class="fa-solid fa-cart-shopping"></i>
+</div>
+</Link>
 
 
 <i onClick={handleDropdownToggle} class="fa-solid fa-bars bars"></i>

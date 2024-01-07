@@ -10,18 +10,12 @@
   align-items: center;
 }
 .cart .count{
-  font-size: 5px;
-  top: 0px;
-  top: -4px;
-  color: cadetblue;
-  position: absolute;
+    position: absolute;
+    font-size: 5px;
+    color: cadetblue;
+    bottom: 7px;
 }
-.cartpng{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
+
 section{
   display: flex;
   justify-content: center;
@@ -37,6 +31,12 @@ section{
   margin-bottom: 7rem;
   flex-direction: column;
   align-items: center;
+}
+.cartpng{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .cartmain2 table{
   min-width: 80vw;
@@ -392,12 +392,6 @@ ul li{
   font-size: 15px;
   right:1rem;
 }
-.cartpng{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
 .formdata{
   flex-direction: column;
   margin-bottom: 1rem;
@@ -503,12 +497,9 @@ justify-content: center;
     font-size: 22px;
     right:1rem;
   }
-  .cartpng{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
+  .cart .count {
+    bottom: 4px;
+}
   .link2{
     margin-left: 1rem;
   }
