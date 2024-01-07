@@ -18,10 +18,11 @@ const{userID}=useSelector(state=>state.items8)
         const response = await axios.get(`${BASE_URL}/check`,{withCredentials:true,credentials:"include"})
         
         if(response.data.success){
+        socket.emit('updateCart', response.data.userID);
         dispatch(users(response.data.username))
         dispatch(loginSuccess(response.data.userID))
         dispatch(message2(response.data.success))
-        socket.emit('updateCart', response.data.userID);
+        
 
         }
         else{
