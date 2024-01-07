@@ -48,7 +48,7 @@ const{userID}=useSelector(state=>state.items8)
   
     return () => {
       console.log('Cleaning up socket listener for cartUpdated');
-      socket.off('cartUpdated');
+      socket.disconnect()
     };
   },[userID,dispatch]);
   
