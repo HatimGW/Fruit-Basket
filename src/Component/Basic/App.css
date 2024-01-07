@@ -392,6 +392,12 @@ ul li{
   font-size: 15px;
   right:1rem;
 }
+.cartpng{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
 .formdata{
   flex-direction: column;
   margin-bottom: 1rem;
@@ -496,6 +502,12 @@ justify-content: center;
   .cart{
     font-size: 22px;
     right:1rem;
+  }
+  .cartpng{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
   }
   .link2{
     margin-left: 1rem;
