@@ -499,7 +499,7 @@ justify-content: center;
   }
   .cart .count {
     font-size: 12px;
-    bottom: 15px;
+    bottom: 10px;
 }
   .link2{
     margin-left: 1rem;                                                                                                                                                                                                                                                                      
@@ -634,8 +634,8 @@ justify-content: center;
   }
   .cart{
     right: 1.5rem;
-  }
-  #navmain h4{
+  }               
+  #navmain h4{                          
     margin-left: 2.5rem;
   }
   .bars{
