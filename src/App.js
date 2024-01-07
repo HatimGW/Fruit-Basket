@@ -19,6 +19,10 @@ const{userID}=useSelector(state=>state.items8)
         
         if(response.data.success){
         socket.emit('updateCart', response.data.userID);
+        socket.on('cartUpdated', (data) => {
+          console.log(data)
+          dispatch(cartUpdated(data));
+      });
         dispatch(users(response.data.username))
         dispatch(loginSuccess(response.data.userID))
         dispatch(message2(response.data.success))
