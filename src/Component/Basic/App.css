@@ -498,10 +498,11 @@ justify-content: center;
     right:1rem;
   }
   .cart .count {
-    bottom: 4px;
+    font-size: 12px;
+    bottom: 15px;
 }
   .link2{
-    margin-left: 1rem;
+    margin-left: 1rem;                                                                                                                                                                                                                                                                      
   }
   .formdata{
     flex-direction: column;
