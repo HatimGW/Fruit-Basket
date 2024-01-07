@@ -40,7 +40,7 @@ const{userID}=useSelector(state=>state.items8)
     socket.on('cartUpdated', (data) => {
       console.log(data)
       dispatch(cartUpdated(data));
-    });
+  });
   
     return () => {
       console.log('Cleaning up socket listener for cartUpdated');
