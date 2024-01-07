@@ -96,7 +96,7 @@ return (
 
 <Link style={{textDecoration:"none"}} className='cart' to="/cart" >
 <div className='cartpng'>
-<span className='count'>1{messages2 ? cartData?.length : null}</span>
+<span className='count'>{messages2 ? cartData?.length : null}</span>
 <i class="fa-solid fa-cart-shopping"></i>
 </div>
 </Link>
