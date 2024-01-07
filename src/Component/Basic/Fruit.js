@@ -24,37 +24,6 @@ const Fruit = () => {
   const[Added,setAdded]=useState(false)
   const[login,setlogin]=useState(false)
 
-
-  const dispatch = useDispatch()
-
-
-  const check = async() =>{
-   
-    try {
-        const response = await axios.get(`${BASE_URL}/check`,{withCredentials:true,credentials:"include"})
-        
-        if(response.data.success){
-        dispatch(users(response.data.username))
-        dispatch(loginSuccess(response.data.userID))
-        dispatch(message2(response.data.success))
-        socket.emit('updateCart', response.data.userID);
-
-        }
-        else{
-            dispatch(user(""))
-            dispatch(loginSuccess(""))
-            dispatch(message2(false))
-        }
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-  
-useEffect(()=>{
-    check()
- },[])
-
   return (
     <>
     <Navb login={login} Already={Already} Added={Added}/>
@@ -68,11 +37,11 @@ useEffect(()=>{
     </div>
      <Routes>
   
-     <Route path="/" element={<Main check={check} setlogin={setlogin} setAdded={setAdded} setAlready={setAlready}/>}></Route>
+     <Route path="/" element={<Main setlogin={setlogin} setAdded={setAdded} setAlready={setAlready}/>}></Route>
      <Route path="/success" element={<PaymentSuccessPage/>}></Route>
-     <Route path="/login" element={<Login check={check}/>}></Route>
+     <Route path="/login" element={<Login />}></Route>
      {messages2 ? (
-     <Route path="/cart" element={<Cart check={check}/>}></Route>
+     <Route path="/cart" element={<Cart/>}></Route>
      ):(
      <Route  path="/cart" element={<Cart2/>}></Route>
      )}

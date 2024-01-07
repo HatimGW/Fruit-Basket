@@ -78,7 +78,7 @@ return (
       </div>
 )}
 
-<img style={{position:"absolute",left:"4px",maxWidth:"1.8rem"}} src={png}></img><h4>Fruit Basket</h4>
+<img alt='logo' style={{position:"absolute",left:"4px",maxWidth:"1.8rem"}} src={png}></img><h4>Fruit Basket</h4>
 <div className='nav2'>
 
 
