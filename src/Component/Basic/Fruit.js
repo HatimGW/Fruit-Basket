@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Main from './Main';
 import Navb from './Navbar';
 import { Routes,Route } from 'react-router-dom';
@@ -13,6 +13,7 @@ import PaymentSuccessPage from './payemntSuccess';
 const Fruit = () => {
 
   const{messages}=useSelector(state=>state.items3)
+  const{navitems}=useSelector(state=>state.items2)
   const{messages2}=useSelector(state=>state.items4)
   const{messages3}=useSelector(state=>state.items5)
   const{user}=useSelector(state=>state.items6)
@@ -32,8 +33,11 @@ const Fruit = () => {
     )}
     </div>
      <Routes>
-  
-     <Route path="/" element={<Main setlogin={setlogin} setAdded={setAdded} setAlready={setAlready}/>}></Route>
+     <Route path="/" exact element={<Main setlogin={setlogin} setAdded={setAdded} setAlready={setAlready}/>}></Route>
+  {navitems?.map((e,i)=>(
+    <Route key={i} path={`/${e}`} element={<Main setlogin={setlogin} setAdded={setAdded} setAlready={setAlready}/>}></Route>
+  ))}
+     
      <Route path="/success" element={<PaymentSuccessPage/>}></Route>
      <Route path="/login" element={<Login />}></Route>
      {messages2 ? (

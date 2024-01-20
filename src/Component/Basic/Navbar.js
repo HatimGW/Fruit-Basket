@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import Fetch, { Filter, loginSuccess, message2, resetCart} from '../Redux/Action';
 import "./App.css"
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import png from "../Basic/fruitsbaskt.png"
 import { BASE_URL } from '../uri';
@@ -41,7 +41,9 @@ const searched = (value)=>{
   if(value !== undefined){
     const name = value.toLowerCase().trim()
     const newname = name[0].toUpperCase()+name.slice(1)
-     
+    navigate("/")
+    setIsDropdownOpen(false)
+    setSearch("")
     dispatch(Fetch(newname))
   }
   else{
@@ -52,6 +54,8 @@ const searched = (value)=>{
 useEffect(()=>{
   dispatch(Filter())
 },[dispatch])
+
+console.log(navitems)
 
 return (
 
@@ -82,13 +86,13 @@ return (
 <div className='nav2'>
 
 
-<Link to='/' className='link2' onClick={()=>dispatch(Fetch("All"))}>Home</Link>
+<NavLink exact activeClassName="active" to='/' className='link2' onClick={()=>dispatch(Fetch("All"))}>Home</NavLink>
 
 <Link className="link2" onClick={handleDropdownToggle}>Category</Link>
       {isDropdownOpen && (
         <div className="dropdown-content">
         {navitems?.map((e,i)=>(
-          <Link to='/' className='link' key={i} onClick={()=>{dispatch(Fetch(e)); handleDropdownToggle()}}>{e}</Link>
+          <NavLink activeClassName="active" to={`/${e}`} className='link' key={i} onClick={()=>{dispatch(Fetch(e)); handleDropdownToggle()}}>{e}</NavLink>
       ))}
         </div>
       )}
@@ -108,8 +112,8 @@ return (
 
 {!messages2 ? (
 <div className='auth'>
-<Link to='/signup' className='link2'>Signup</Link>
-<Link to='/login' className='link2'>Login</Link>
+<NavLink activeClassName="active" to='/signup' className='link2'>Signup</NavLink>
+<NavLink activeClassName="active" to='/login' className='link2'>Login</NavLink>
 </div>
 ):(
   <>
@@ -117,7 +121,7 @@ return (
     <input value={search} onChange={(e)=>setSearch(e.target.value)} placeholder='Search for Category'></input>
     <button onClick={()=>searched(search)}>Submit</button>
     </div>
-<Link onClick={logout} className='link2'><i class="fa-solid fa-right-from-bracket"></i></Link>
+<Link activeClassName="active" onClick={logout} className='link2'><i class="fa-solid fa-right-from-bracket"></i></Link>
 </>
 )}
 
@@ -128,14 +132,14 @@ return (
     <button onClick={()=>searched(search)}>Submit</button>
 </div>
 
- <Link to='/' className='link' onClick={()=>{dispatch(Fetch("All")); handleDropdownToggle()}}>Home</Link>
+ <NavLink exact activeClassName="active" to='/' className='link' onClick={()=>{dispatch(Fetch("All")); handleDropdownToggle()}}>Home</NavLink>
  {navitems?.map((e,i)=>(
-          <Link to='/' className='link' key={i} onClick={()=>{dispatch(Fetch(e)); handleDropdownToggle()}}>{e}</Link>
+          <NavLink to={`/${e}`} activeClassName="active" className='link' key={i} onClick={()=>{dispatch(Fetch(e)); handleDropdownToggle()}}>{e}</NavLink>
   ))}
  {!messages2 && (
   <>
-  <Link onClick={handleDropdownToggle} to='/signup' className='link'>Signup</Link>
-  <Link onClick={handleDropdownToggle} to='/login' className='link'>Login</Link>
+  <NavLink activeClassName="active" onClick={handleDropdownToggle} to='/signup' className='link'>Signup</NavLink>
+  <NavLink activeClassName="active" onClick={handleDropdownToggle} to='/login' className='link'>Login</NavLink>
   </>
   )}
 </div>

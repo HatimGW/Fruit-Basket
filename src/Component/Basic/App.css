@@ -63,6 +63,11 @@ section{
 .signupAl{
   animation: shake 0.5s ease-in-out forwards;
 }
+.active{
+  border-radius: 10px;
+  background-color: rgb(55, 97, 121);
+  color:rgb(255, 255, 255)
+}
 .addBatch{
   border-radius:10px;
   position:absolute;

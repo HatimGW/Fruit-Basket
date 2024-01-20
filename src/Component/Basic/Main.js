@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import {Container,Card,Button,Row,Col} from 'react-bootstrap';
 import Badge from 'react-bootstrap/Badge'
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { BASE_URL } from '../uri';
 import socket from '../socket';
@@ -14,10 +14,6 @@ const Main = ({setlogin,setAdded,setAlready,check}) => {
 
 
   const{userID}=useSelector(state=>state.items8)
-
-
-  const dispatch= useDispatch()
- 
 
   const handleMouseOver = (index) => {
     if(index !== -1){
