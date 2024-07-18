@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import Main from './Main';
 import Navb from './Navbar';
-import { Routes,Route } from 'react-router-dom';
+import { Routes,Route,Switch } from 'react-router-dom';
 import Cart from './cart';
 import Cart2 from './cart2';
 import Signup from './Signup';
 import Login from './Login';
+import ErrorPage from "./ErrorPage.js";
 import "./App.css"
 import { useSelector } from 'react-redux';
 import PaymentSuccessPage from './payemntSuccess';
@@ -32,7 +33,7 @@ const Fruit = () => {
     <span><p>Welcome to Fruit Basket {user}</p></span>
     )}
     </div>
-     <Routes>
+     <Switch>
      <Route path="/" exact element={<Main setlogin={setlogin} setAdded={setAdded} setAlready={setAlready}/>}></Route>
   {navitems?.map((e,i)=>(
     <Route key={i} path={`/${e}`} element={<Main setlogin={setlogin} setAdded={setAdded} setAlready={setAlready}/>}></Route>
@@ -46,7 +47,8 @@ const Fruit = () => {
      <Route  path="/cart" element={<Cart2/>}></Route>
      )}
      <Route path="/signup" element={<Signup/>}></Route>
-     </Routes>
+     <Route element={<ErrorPage/>}></Route>
+     </Switch>
     </>
    
   )
