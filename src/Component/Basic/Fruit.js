@@ -47,7 +47,7 @@ const Fruit = () => {
      <Route  path="/cart" element={<Cart2/>}></Route>
      )}
      <Route path="/signup" element={<Signup/>}></Route>
-     <Route element={<ErrorPage/>}></Route>
+     <Route path="*" element={<ErrorPage/>}></Route>
      </Routes>
     </>
    
